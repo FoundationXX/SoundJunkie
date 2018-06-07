@@ -7,11 +7,22 @@
 group 'Prometheus'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.4"
+    }
+}
+
 
 
 apply plugin: 'java'
 apply plugin: 'application'
-//apply plugin: 'com.github.johnrengelman.shadow' version '1.2.2'
+apply plugin: "com.github.johnrengelman.shadow"
 
 sourceCompatibility = 1.8
 mainClassName = 'Server'
